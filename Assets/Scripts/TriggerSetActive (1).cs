@@ -10,11 +10,17 @@ public class TriggerSetActive : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        targetObject.SetActive(false);
+        if (other.CompareTag("Player"))
+        {
+         targetObject.SetActive(false);
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        targetObject.SetActive(true);
+        if (other.CompareTag("Player"))
+        {
+         targetObject.SetActive(true);
+        }
     }       
 }
